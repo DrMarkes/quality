@@ -1,0 +1,14 @@
+FlexboxLayout {
+    justify-content: space-around;
+    align-items: center;
+}
+
+Image {
+    width: 360px;
+    height: 360px;
+}
+
+a {
+    width: 360px;
+    height: 360px;
+}

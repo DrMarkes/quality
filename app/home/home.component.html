@@ -1,0 +1,22 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Home"></Label>
+</ActionBar>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+    <FlexboxLayout>
+        <Image src="~/assets/images/good.jpg" (tap)="clickButton('отлично')">
+            <Button text="hello"></Button>
+        </Image>
+
+        <Image src="~/assets/images/normal.jpg" (tap)="clickButton('нормально')">
+            <Button text="hello"></Button>
+        </Image>
+
+        <Image src="~/assets/images/angry.jpg" (tap)="clickButton('плохо')">
+            <Button text="hello"></Button>
+        </Image>
+
+
+        <Button text="GO TO SECOND" [nsRouterLink]="['/results']" class="link"></Button>
+    </FlexboxLayout>
+
+</Page>
