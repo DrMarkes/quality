@@ -1,0 +1,51 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" (swipe)="onSwipe($event)">
+        <StackLayout>
+            <FlexboxLayout class="horizontal">
+                <TextField hint="Введите начало периода"
+                           id="textFieldFirstDate"
+                           [text]='firstDate | date:"dd/MM/yy"'>
+                </TextField>
+
+                <TextField hint="Введите конец периода"
+                           id="textFieldLastDate"
+                           [text]='lastDate | date:"dd/MM/yy"'>
+                </TextField>
+
+            </FlexboxLayout>
+
+            <Button class="btn btn-primary btn-active"
+                    text="Показать результат"
+                    (tap)="showResult()">
+            </Button>
+
+            <FlexboxLayout class="horizontal">
+
+                <StackLayout class="input-field" orientation="horizontal">
+                    <Label text="Отлично:" class="h3 p-15"></Label>
+                    <Label class="h3 p-15" [text]="good" textWrap="true"></Label>
+                </StackLayout>
+
+                <StackLayout class="input-field" orientation="horizontal">
+                    <Label text="Нормально:" class="h3 p-15"></Label>
+                    <Label class="h3 p-15" [text]="normal" textWrap="true"></Label>
+                </StackLayout>
+
+                <StackLayout class="input-field" orientation="horizontal">
+                    <Label text="Плохо:" class="h3 p-15"></Label>
+                    <Label class="h3 p-15" [text]="bad" textWrap="true"></Label>
+                </StackLayout>
+
+            </FlexboxLayout>
+
+            <ListView [items]="qualities | async" class="list-group">
+                <ng-template let-quality="item" let-i="index" let-odd="odd" let-even="even">
+                    <StackLayout class="input-field" orientation="horizontal">
+                        <Label [text]="quality.character" class="h3 p-15" textWrap="true"></Label>
+                        <Label [text]="quality.timestamp | date:'dd/MM/yy HH:mm'" class="h3 p-15" textWrap="true"></Label>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+
+        </StackLayout>
+
+</Page>
